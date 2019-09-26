@@ -1,0 +1,24 @@
+<div class="container mx-auto row justify-content-center w-50 my-2">
+  <div class="btn btn-sm btn-light pointer mx-2" (click)="ralentir()">
+    <i class=" far fa-minus-square fa-lg"></i>
+  </div>
+  <label>Vitesse</label>
+  <div class="btn btn-sm btn-light pointer mx-2" (click)="accelerer()">
+    <i class=" far fa-plus-square fa-lg"></i>
+  </div>
+</div>
+<div class="container mx-auto row justify-content-around w-50 mb-2">
+  <div>
+    <label>Longueur: </label>
+    <input type="number" [(ngModel)]="grid.longueur" class="form-control-sm" />
+  </div>
+  <div>
+    <label>Largeur: </label>
+    <input type="number" [ngModel]="grid.largeur" class="form-control-sm" />
+  </div>
+</div>
+<div class="container mx-auto text-center my-2">
+  <div class="btn btn-lg btn-light" (click)="start()">Start</div>
+  <div class="btn btn-lg btn-light mx-3" (click)="stop()">Stop</div>
+  <div class="btn btn-lg btn-light" (click)="update()">Refresh</div>
+</div>
