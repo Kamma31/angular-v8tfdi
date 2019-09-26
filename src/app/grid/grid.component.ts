@@ -5,7 +5,8 @@ import { Grid } from "../grid.model";
 @Component({
   selector: "app-grid",
   templateUrl: "./grid.component.html",
-  styleUrls: ["./grid.component.css"]
+  styleUrls: ["./grid.component.css"],
+  styles:[]
 })
 export class GridComponent implements OnInit {
   grid: Grid = new Grid();

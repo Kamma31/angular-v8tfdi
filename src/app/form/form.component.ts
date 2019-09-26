@@ -5,7 +5,8 @@ import { AppService } from '../app.service';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styleUrls: ['./form.component.css'],
+  styles:[]
 })
 export class FormComponent implements OnInit {
   grid: Grid;
