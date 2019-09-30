@@ -1,3 +1,18 @@
-<app-hello [name]="title"></app-hello>
-<app-form></app-form>
-<app-grid></app-grid>
+<div class="d-flex justify-content-center">
+  <div class="card">
+    <div class="card-header"><app-hello [name]="title"></app-hello></div>
+    <div class="card-body">
+      <app-grid></app-grid>
+      <div class="row no-gutters">
+        <div class="col-6 border rounded px-2">Generation : {{ game.generation }}</div>
+        <div class="col-6 border rounded px-2">Population : {{ game.population }}</div>
+        <button class="btn btn-primary col-5" *ngIf="!game.play" (click)="play()">Play</button>
+        <button class="btn btn-secondary col-5" *ngIf="game.play" (click)="stop()">Stop</button>
+        <button class="btn btn-light col-5" (click)="reset()">Reset</button>
+        <button class="btn btn-secondary col" (click)="random()"><i class="fa fa-random"></i></button>
+        <button class="btn btn-primary col" (click)="toggleConfig()"><i class="fa fa-cogs"></i></button>
+      </div>
+      <app-form *ngIf="showConfig"></app-form>
+    </div>
+  </div>
+</div>

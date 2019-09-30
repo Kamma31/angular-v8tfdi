@@ -1,37 +1,31 @@
-import { Component, OnInit } from "@angular/core";
-import { AppService } from "../app.service";
-import { Grid } from "../grid.model";
+import { Component, OnInit } from '@angular/core';
+import { Grid } from '../grid.type';
+import { GridService } from '../grid.service';
+import { ConfigService } from '../config.service';
+import { CELL } from '../cell.state';
+import { GameService } from '../game.service';
 
 @Component({
-  selector: "app-grid",
-  templateUrl: "./grid.component.html",
-  styleUrls: ["./grid.component.css"]
+  selector: 'app-grid',
+  templateUrl: './grid.component.html',
+  styleUrls: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
-  grid: Grid = new Grid(25,25);
+  grid: Grid;
 
-  constructor(private appService: AppService) {}
-
-  ngOnInit() {
-    this.appService.grid$.subscribe(res => {
-      this.grid = res;
+  constructor(private gridService: GridService, public config: ConfigService, public game: GameService) {
+    this.gridService.grid$.subscribe(grid => {
+      this.grid = grid;
     });
   }
 
-  longueur(n: number){    
-    return Array(n).fill(0);
+  ngOnInit() {}
+
+  getColor(cell: CELL) {
+    return cell === CELL.DEAD ? 'white' : cell === CELL.NEW ? 'pink' : 'red';
   }
 
-  largeur(n: number){
-    return Array(n).fill(0);
-  }
-
-  getBgColor(i: number, j: number): string{
-    if(typeof this.grid.state[i] != undefined && typeof this.grid.state[i][j]  != undefined)
-      return this.grid.state[i][j] == 1 ? "black":"";
-  }
-
-  changeColor(i: number, j: number){
-    this.grid.state[i][j] = (this.grid.state[i][j]+1)%2;
+  addCell(i: number, j: number) {
+    this.game.addCell(i, j);
   }
 }
