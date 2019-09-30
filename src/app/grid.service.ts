@@ -19,6 +19,7 @@ export class GridService {
 
   reset() {
     this.grid = [];
+    console.log(this.config);
     for (let i = 0; i < this.config.longueur; i++) {
       const row = [];
       for (let j = 0; j < this.config.largeur; j++) {

@@ -21,6 +21,14 @@ export class FormComponent implements OnInit {
     this.config.setVitesse(this.config.vitesse * 0.9);
   }
 
+  setLargeur(largeur: number) {
+    this.config.setLargeur(largeur);
+  }
+
+  setLongueur(longueur: number) {
+    this.config.setLongueur(longueur);
+  }
+
   update() {
     this.grid.reset();
   }

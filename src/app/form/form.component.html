@@ -11,10 +11,10 @@
 <div class="row justify-content-around w-50 mb-2">
   <div>
     <label>Longueur: </label>
-    <input type="number" [ngModel]="config.longueur" class="form-control-sm" />
+    <input type="number" [ngModel]="config.longueur" (ngModelChange)="setLongueur($event)" class="form-control-sm" />
   </div>
   <div>
     <label>Largeur: </label>
-    <input type="number" [ngModel]="config.largeur" class="form-control-sm" />
+    <input type="number" [ngModel]="config.largeur" (ngModelChange)="setLargeur($event)" class="form-control-sm" />
   </div>
 </div>
