@@ -1,10 +1,11 @@
 <div class="text-center mt-5">Vitesse: {{grid.vitesse}}</div>
-<div class="container mx-auto my-5" style="border: solid">
-  <ng-container *ngFor="let i of longueur(grid.longueur)">
+<div class="container mx-auto my-5">
+  <ng-container *ngFor="let pif of longueur(grid.longueur);let i = index">
     <div class="container row justify-content-center">
-      <ng-container *ngFor="let j of largeur(grid.largeur)">
-        <div class="square"></div>
+      <ng-container *ngFor="let paf of largeur(grid.largeur);let j = index">
+        <div class="square" [style.background-color]="getBgColor(i,j)" (click)="changeColor(i,j)"></div>
       </ng-container>
     </div>
   </ng-container>
 </div>
+
