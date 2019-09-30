@@ -16,9 +16,20 @@ export class GameService {
 
   constructor(private gridService: GridService, private config: ConfigService) {
     this.gridService.grid$.subscribe(grid => {
-      this.stop();
+      this.reset();
       this.grid = grid;
+      this.count();
     });
+  }
+
+  count() {
+    this.grid.forEach(row => row.forEach(cell => (cell !== CELL.DEAD ? this.population++ : 0)));
+  }
+
+  reset() {
+    this.play = false;
+    this.generation = 0;
+    this.population = 0;
   }
 
   start() {
