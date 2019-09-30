@@ -8,7 +8,7 @@ import { Grid } from "../grid.model";
   styleUrls: ["./grid.component.css"]
 })
 export class GridComponent implements OnInit {
-  grid: Grid = new Grid();
+  grid: Grid = new Grid(25,25);
 
   constructor(private appService: AppService) {}
 
@@ -27,7 +27,8 @@ export class GridComponent implements OnInit {
   }
 
   getBgColor(i: number, j: number): string{
-    return this.grid.state[i][j] == 1 ? "black":"";
+    if(typeof this.grid.state[i] != undefined && typeof this.grid.state[i][j]  != undefined)
+      return this.grid.state[i][j] == 1 ? "black":"";
   }
 
   changeColor(i: number, j: number){
