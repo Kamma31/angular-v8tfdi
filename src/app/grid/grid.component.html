@@ -2,7 +2,7 @@
   <ng-container *ngFor="let row of grid; let i = index">
     <tr>
       <ng-container *ngFor="let cell of row; let j = index">
-        <td class="square" [style.background-color]="getColor(cell)" (mousedown)="addCell(i, j)"></td>
+        <td class="square" [style.background-color]="getColor(cell)" (click)="changeCell(i, j)"></td>
       </ng-container>
     </tr>
   </ng-container>

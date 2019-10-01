@@ -1,5 +1,5 @@
 <hr>
-<div class="row justify-content-center w-50 my-2">
+<div class="row justify-content-center w-50 mx-auto my-2">
   <div class="btn btn-sm btn-light pointer mx-2" (click)="ralentir()">
     <i class=" far fa-minus-square fa-lg"></i>
   </div>
@@ -8,7 +8,7 @@
     <i class=" far fa-plus-square fa-lg"></i>
   </div>
 </div>
-<div class="row justify-content-around w-50 mb-2">
+<div class="row justify-content-around w-75 mx-auto mb-2">
   <div>
     <label>Longueur: </label>
     <input type="number" [ngModel]="config.longueur" (ngModelChange)="setLongueur($event)" class="form-control-sm" />

@@ -90,4 +90,11 @@ export class GameService {
       this.population++;
     }
   }
+
+  removeCell(i: number, j:number){
+    if(this.grid[i][j] !== CELL.DEAD){
+      this.grid[i][j] = CELL.DEAD;
+      this.population--;
+    }
+  }
 }
