@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject, Observable, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +13,10 @@ export class ConfigService {
   largeur: number;
   vitesse: number;
 
-  private onReset = new BehaviorSubject<>(this);
+  private onReset = new BehaviorSubject<any>(this);
   onReset$ = this.onReset.asObservable();
 
-  private onUpdate = new BehaviorSubject<>(this);
+  private onUpdate = new BehaviorSubject<any>(this);
   onUpdate$ = this.onReset.asObservable();
 
   constructor() {

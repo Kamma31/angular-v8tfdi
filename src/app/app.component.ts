@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
-import { GameService } from './game.service';
-import { GridService } from './grid.service';
+import { Component } from "@angular/core";
+import { GameService } from "./game.service";
+import { GridService } from "./grid.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
   styles: []
 })
 export class AppComponent {
-  title = '...';
+  title = "...";
   showConfig = false;
 
   constructor(public game: GameService, private grid: GridService) {}
