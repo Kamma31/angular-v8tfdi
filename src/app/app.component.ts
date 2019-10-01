@@ -9,7 +9,7 @@ import { GridService } from './grid.service';
   styles: []
 })
 export class AppComponent {
-  title = 'GameOfLife';
+  title = '...';
   showConfig = false;
 
   constructor(public game: GameService, private grid: GridService) {}
